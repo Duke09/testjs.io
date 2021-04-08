@@ -1,7 +1,7 @@
 /**
  *  Shopify Thankyou page checks for phone & pincode
  */
-
+<script>
 (function () {
     var checkoutObj
     var shop = window.Shopify.shop
@@ -270,3 +270,4 @@
     }, 0)
 
 })()
+</script>
