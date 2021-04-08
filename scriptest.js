@@ -240,24 +240,24 @@
 
     fbclid = fbclid ? fbclid : '';
     
-    const data = { 'fbp': fbp, 'fbclid': fbclid, 'order_id': '2641427365967', 'store_name': 'logisy-demo3' };
+    const data = { 'fbp': fbp, 'fbclid': fbclid, 'order_id': '{{ order.id }}', 'store_name': '{{ shop.name }}' };
     
     function offlineConversion(data){
         var url = 'https://test.logisy.in/api/orders/facebook/offline-conversion/';
         console.log(data)
         console.log(url)
 
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        }).then(response => {
-            console.log("Response : ", response);
-        }).catch((error) => {
-            console.log('Error:', error);
-        });
+        // fetch(url, {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        // }).then(response => {
+        //     console.log("Response : ", response);
+        // }).catch((error) => {
+        //     console.log('Error:', error);
+        // });
     }
 
     // Show cod convert offer
