@@ -240,7 +240,7 @@
 
     fbclid = fbclid ? fbclid : '';
     
-    const data = { 'fbp': fbp, 'fbclid': fbclid, 'order_id': '{{ order.id }}', 'store_name': '{{ shop.name }}' };
+    const data = { 'fbp': fbp, 'fbclid': fbclid, 'order_id': {{ order.id }}, 'store_name': {{ shop.name }} };
     
     function offlineConversion(data){
         var url = 'https://test.logisy.in/api/orders/facebook/offline-conversion/';
