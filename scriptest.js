@@ -1,7 +1,3 @@
-/**
- *  Shopify Thankyou page checks for phone & pincode
- */
-
 (function () {
     var checkoutObj
     var shop = window.Shopify.shop
@@ -238,9 +234,11 @@
     var fbp = getCookieByName('_fbp');
     var fbclid = getParameterByName('fbclid', window.location.href);
 
+    var configTpChecks = window.lgTPgChecks;
+
     fbclid = fbclid ? fbclid : '';
     
-    const data = { 'fbp': fbp, 'fbclid': fbclid, 'order_id': '{{ order.id }}', 'store_name': '{{ shop.name }}' };
+    const data = { 'fbp': fbp, 'fbclid': fbclid, 'order_id': configTpChecks.order_id, 'store_name': configTpChecks.store_name };
     
     function offlineConversion(data){
         var url = 'https://test.logisy.in/api/orders/facebook/offline-conversion/';
@@ -270,4 +268,3 @@
     }, 0)
 
 })()
-
